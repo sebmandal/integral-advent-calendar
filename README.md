@@ -3,8 +3,8 @@
 ## Kjør appen
 
 ```bash
-git clone git@github.com:sebmandal/rea3050-h2023.git
-cd rea3050-h2023
+git clone git@github.com:sebmandal/integral-advent-calendar.git
+cd integral-advent-calendar
 npm i
 npm run proxy
 ```
