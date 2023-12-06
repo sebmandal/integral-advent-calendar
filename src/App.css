@@ -1,38 +1,137 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Kalam:wght@400;700&display=swap");
+
+/* General Layout and Styling */
+body {
+	font-family: "Poppins", Arial, Helvetica, sans-serif;
+	background-color: #f4f4f4;
+	color: #333;
+	padding: 20px;
+	margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo {
+	max-width: 200px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Login Section */
+input[type="text"] {
+	padding: 10px;
+	margin-right: 10px;
+	margin-top: 2rem;
+	border: 1px solid #ddd;
+	border-radius: 4px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+button {
+	padding: 10px 15px;
+	background-color: #5cb85c;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+	background-color: #4cae4c;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Calendar Display */
+h1 {
+	color: #d43f3a;
+	font-weight: bold;
+}
+
+.calendar-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	padding-top: 20px;
+}
+
+.calendar-item {
+	flex: 0 0 calc(25% - 10px);
+	border: 1px solid #ccc;
+	padding: 2rem 1rem;
+	border-radius: 8px;
+	background-color: #fffafa;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	box-sizing: border-box;
+	background: linear-gradient(
+			rgba(255, 82, 82, 0.751),
+			rgba(255, 0, 0, 0.417)
+		),
+		url("./assets/christmas-deco.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.calendar-item:hover {
+	background-color: #f8f8f8;
+	border-color: #d43f3a;
+}
+
+.calendar-item > h3 {
+	font-family: "Kalam", handwriting;
+	font-size: 24px;
+	color: white;
+	text-align: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+	.calendar-item {
+		flex: 0 0 calc(33.333% - 10px); /* 3 items per row for tablet screens */
+	}
+}
+
+@media (max-width: 768px) {
+	.calendar-item {
+		flex: 0 0 calc(50% - 10px); /* 2 items per row for even large phones screens */
+	}
+}
+
+@media (max-width: 480px) {
+	.calendar-item {
+		flex: 0 0 100%; /* 1 item per row for mobile screens */
+	}
+}
+
+/* Modal Styling */
+.modal {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	padding: 20px;
+	border: 1px solid black;
+	text-align: left;
+	box-sizing: border-box;
+	max-width: 80%;
+	max-height: 80%;
+	overflow: auto;
+}
+
+.modal button {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+
+.modal img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Responsive Adjustments for Modal */
+@media (max-width: 768px) {
+	.modal {
+		width: 90%;
+	}
+}
+
+@media (max-width: 480px) {
+	.modal {
+		width: 95%;
+	}
 }
